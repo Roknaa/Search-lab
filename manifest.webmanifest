@@ -1,0 +1,11 @@
+{
+  "name": "SEARCH — Explore Beyond",
+  "short_name": "SEARCH",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#070c16",
+  "theme_color": "#080d18",
+  "description": "عالم من المعرفة والتجارب التفاعلية.",
+  "lang": "ar",
+  "dir": "rtl"
+}
