@@ -22,3 +22,164 @@
 .coming-page,.simple-page{padding-top:90px;padding-bottom:120px;min-height:68vh}.coming-page{text-align:center;display:flex;align-items:center;flex-direction:column}.coming-page>p,.simple-page>p{max-width:580px;margin:0 auto 24px}.coming-planet{width:250px;height:190px;position:relative;margin-bottom:25px}.coming-sun{position:absolute;width:52px;height:52px;border-radius:50%;background:#ffcc70;top:68px;left:calc(50% - 26px);box-shadow:0 0 50px #ffbc4d}.coming-orbit{position:absolute;border:1px solid #72b9e477;border-radius:50%;width:145px;height:80px;top:53px;left:calc(50% - 72px)}.co2{width:210px;height:130px;top:28px;left:calc(50% - 105px)}.co3{width:280px;height:180px;top:3px;left:calc(50% - 140px)}.coming-pyramid{width:0;height:0;border-left:100px solid transparent;border-right:100px solid transparent;border-bottom:155px solid #d9b477;filter:drop-shadow(13px 0 0 #8c613e);margin:10px auto 40px}.simple-page{text-align:center}.simple-page .eyebrow{justify-content:center}.simple-page h1{margin-top:18px}
 @media(max-width:900px){.project-grid{grid-template-columns:repeat(2,1fr)}.lab-workspace{grid-template-columns:minmax(0,1fr) 235px}.science-explain{gap:25px}}
 @media(max-width:680px){.inner-page{padding-top:25px;padding-bottom:75px}.page-hero{padding:42px 0 30px}.page-hero h1{font-size:43px}.page-hero>p{font-size:11px}.project-stats{gap:22px;margin-top:24px}.project-stats b{font-size:22px}.project-stats span{font-size:7px;max-width:80px;line-height:1.7}.project-toolbar{align-items:stretch;flex-direction:column;padding:20px 0}.filter-tabs{display:flex;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}.filter-tab{white-space:nowrap}.project-search{width:100%}.project-grid{grid-template-columns:1fr;gap:13px}.project-cover{height:185px}.project-tile-body{padding:16px}.build-note{margin-top:25px}.breadcrumbs{font-size:8px;gap:6px;overflow:hidden;white-space:nowrap}.lab-heading{align-items:flex-start;flex-direction:column;margin-bottom:20px}.lab-heading h1{font-size:38px}.lab-heading p{font-size:10px}.lab-badge{padding:9px 12px}.lab-shell{padding:11px;border-radius:18px}.lab-topline{font-size:8px;padding-bottom:10px}.lab-workspace{grid-template-columns:1fr;gap:12px}.lab-canvas-wrap{border-radius:12px}.lab-controls{padding:15px}.control-title{margin-bottom:18px}.preset-buttons{gap:8px}.preset{padding:9px 4px}.result-box{margin-top:14px}.science-explain{grid-template-columns:1fr;gap:22px;padding:55px 0}.explain-copy h2{font-size:27px}.source-panel{align-items:flex-start;flex-direction:column}.source-panel h2{font-size:19px}.source-links{width:100%}.source-links a{flex:1;text-align:center}.next-project{font-size:9px}.coming-page,.simple-page{padding-top:60px}.coming-page h1,.simple-page h1{font-size:39px}.coming-page>p,.simple-page>p{font-size:11px}.coming-planet{transform:scale(.85);margin-block:-5px 10px}}
+
+
+/* =========================================================
+   SEARCH — Mobile viewport and navigation overflow fix
+   Added: 2026-11-09
+   ========================================================= */
+html {
+  max-width: 100%;
+  overflow-x: clip;
+}
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+#app-main,
+#site-header,
+#site-footer {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+@media (max-width: 680px) {
+  .shell {
+    width: calc(100% - 34px);
+    max-width: 520px;
+    min-width: 0;
+  }
+
+  .header-inner {
+    width: calc(100% - 28px);
+    max-width: 520px;
+    min-width: 0;
+    gap: 10px;
+  }
+  .brand {
+    min-width: 0;
+  }
+  .header-tools {
+    min-width: 0;
+    flex-shrink: 0;
+  }
+
+  .hero {
+    width: calc(100% - 34px);
+    max-width: 520px;
+    min-width: 0;
+  }
+  .hero-copy {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .hero-copy .eyebrow {
+    max-width: 100%;
+    flex-wrap: wrap;
+    letter-spacing: 1.5px;
+    font-size: 9px;
+  }
+  .hero h1,
+  .hero-lead {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+  .hero-actions {
+    width: 100%;
+    min-width: 0;
+  }
+  .hero-actions .btn {
+    min-width: 0;
+    white-space: normal;
+    text-align: center;
+  }
+  .hero-proof {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  /* Keep decorative planetary artwork inside its own layout box. */
+  .hero-art {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    transform: none;
+    overflow: hidden;
+    contain: layout paint;
+  }
+  .planet {
+    width: min(210px, 62vw);
+  }
+  .orbit {
+    width: min(320px, 92vw);
+  }
+  .orbit-two {
+    width: min(350px, 98vw);
+  }
+  .floating-card {
+    max-width: 46%;
+  }
+
+  /* The dock now distributes all four actions evenly on narrow screens. */
+  .mobile-dock {
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding-left: max(8px, env(safe-area-inset-left));
+    padding-right: max(8px, env(safe-area-inset-right));
+    justify-content: space-evenly;
+  }
+  .mobile-dock a,
+  .mobile-dock button {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 25%;
+    padding-inline: 2px;
+    white-space: nowrap;
+    font-size: 9px;
+  }
+  .mobile-dock i {
+    flex: 0 0 auto;
+  }
+
+  .footer-main,
+  .footer-bottom {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .footer-bottom > span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 360px) {
+  .header-tools {
+    gap: 5px;
+  }
+  .header-tools .icon-btn,
+  .lang-btn {
+    width: 33px;
+    height: 33px;
+  }
+  .brand-word {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+  .hero-actions {
+    flex-direction: column;
+  }
+  .hero-actions .btn {
+    width: 100%;
+  }
+  .mobile-dock a,
+  .mobile-dock button {
+    font-size: 8px;
+  }
+}
